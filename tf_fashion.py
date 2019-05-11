@@ -44,3 +44,13 @@ history = model.fit(train_images, train_labels, epochs=5)
 #evaluating trained model
 print("Evaluating trained model...\n")
 test_loss, test_acc = model.evaluate(test_images, test_labels)
+
+plt.plot(history.history['accuracy'])
+plt.plot(history.history['loss'])
+plt.hlines(test_loss, xmin=0, xmax=4, colors="r", linestyles='dashed')
+plt.hlines(test_acc, xmin=0, xmax=4, colors="g", linestyles='dashed')
+plt.title("Accuracy vs Loss per Epoch")
+plt.ylabel('Accuracy / Loss')
+plt.xlabel('Epoch')
+plt.legend(['Accuracy', 'Loss', "Test Loss", "Test Accuracy"], loc='upper left')
+plt.show()
