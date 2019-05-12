@@ -54,3 +54,6 @@ plt.ylabel('Accuracy / Loss')
 plt.xlabel('Epoch')
 plt.legend(['Accuracy', 'Loss', "Test Loss", "Test Accuracy"], loc='upper left')
 plt.show()
+
+predictions = model.predict(test_images)
+print(np.argmax(predictions[0]))
